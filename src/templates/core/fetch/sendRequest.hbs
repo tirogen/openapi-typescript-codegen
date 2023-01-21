@@ -20,6 +20,16 @@ export const sendRequest = async (
 		request.credentials = config.CREDENTIALS;
 	}
 
+	if (config.REVALIDATE) {
+		request.next = {
+			revalidate: config.REVALIDATE,
+		};
+	}
+
+	if (config.CACHE) {
+		request.cache = config.CACHE;
+	}
+
 	onCancel(() => controller.abort());
 
 	return await fetch(url, request);
