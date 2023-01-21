@@ -16,7 +16,7 @@ export type OpenAPIConfig = {
 	HEADERS?: Headers | Resolver<Headers>;
 	ENCODE_PATH?: (path: string) => string;
 	REVALIDATE?: number;
-	CACHE?: string;
+	CACHE?: RequestCache;
 };
 
 export const OpenAPI: OpenAPIConfig = {
